@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute of Computer Science - Satara</title>
+    <link rel="icon" href="image/logo2.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #003399;
+            --secondary-color: #ffffff;
+            --accent-color: #66ccff;
+            --background-color: #f4f4f4;
+            --text-color-dark: #333;
+            --text-color-light: #FAF0CA;
+            --heading-color: #0D3B66;
+            --subheading-color: #555555;
+            --button-primary-bg: #66ccff;
+            --button-primary-hover-bg: #4fa3cc;
+            --button-outline-bg: transparent;
+            --button-outline-border: #003399;
+            --button-outline-hover-bg: #003399;
+            --button-outline-hover-color: #ffffff;
+            --border-color: #d1d1d1;
+            --border-hover-color: #66ccff;
+            --bg-light: #ffffff;
+            --bg-dark: #0D3B66;
+            --bg-hover: #f0f0f0;
+            --bg-gradient-start: rgba(0, 51, 153, 0.8);
+            --bg-gradient-end: rgba(0, 0, 0, 0.6);
+            --section-bg: #ffffff;
+            --section-hover-bg: #f9f9f9;
+            --alert-success-bg: #28a745;
+            --alert-error-bg: #dc3545;
+            --alert-warning-bg: #ffc107;
+            --alert-info-bg: #17a2b8;
+            --link-color: #003399;
+            --link-hover-color: #66ccff;
+            --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --box-shadow-dark: 0 10px 15px rgba(0, 0, 0, 0.2);
+            --hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --navbar-bg: #ffffff;
+            --navbar-text-color: #003399;
+            --footer-bg: #0D3B66;
+            --footer-text-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --card-border: #d1d1d1;
+            --card-hover-bg: #f9f9f9;
+            --card-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(to right, #003399, #66ccff);
+            --gradient-accent: linear-gradient(to right, #66ccff, #f4f4f4);
+            --highlight-color: #f95738;
+            --danger-color: #f44336;
+            --success-color: #4CAF50;
+            --warning-color: #ff9800;
+            --info-color: #2196F3;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #fff;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--info-color);
+        }
+
+        .nav-link.btn:hover {
+            background-color: var(--highlight-color) !important;
+        }
+
+        .about-us {
+            font-family: 'Arial', sans-serif;
+            margin-top: 86px;
+        }
+
+        .about-us {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .about-us .lead {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .about-us .text-muted {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #777;
+        }
+
+        .about-us .btn-primary {
+            background-color: var(--highlight-color);
+            border-color: var(--highlight-color);
+            padding: 10px 20px;
+            font-size: 1.125rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .about-us .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .about-us img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .about-us .row {
+                text-align: center;
+            }
+
+            .about-us img {
+                max-height: 250px;
+                margin: 0 auto;
+            }
+
+            .about-us .col-md-5 {
+                margin-bottom: 20px;
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .d-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+
+        .staff-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 0.875rem;
+            color: #555;
+        }
+
+        .card-body p {
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .staff-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .about-us-heading {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .heading-underline {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background-color: var(--highlight-color);
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="ICS Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white"
+                            style="background-color: var(--primary-color); color: white; border: none; border-radius: 30px; padding: 8px 16px; font-weight: bold;"
+                            data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person-circle" style="font-size: 18px;"></i>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header"
+                    style="background-color: #0D3B66; color: #FFF; border-bottom: 2px solid #F4D35E;">
+                    <h5 class="modal-title" id="registerModalLabel"
+                        style="font-family: 'Arial', sans-serif; font-size: 1.25rem; color: #FFF;">
+                        <i class="bi bi-pencil-square" style="font-size: 1.5rem; color: #FFF;"></i> Login
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="color: #FFF;"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                Email ID<span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                Password<span class="text-danger">*</span>
+                            </label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"
+                            style="background-color: var(--success-color); color: #FFF">
+                            <i class="bi bi-check-circle"></i> Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="about-us py-5" style="background-color: #f4f7fb;">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-4" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; 
+                       position: relative; padding-left: 20px; line-height: 1.4; display: inline-block;"
+                data-aos="fade-up" data-aos-delay="200">
+                About Us
+                <span
+                    style="position: absolute; left: 0; top: 0; height: 100%; width: 10px; background-color: var(--highlight-color); z-index: 1;"></span>
+            </h2>
+
+            <div class="row align-items-center">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <img src="image/about.png" alt="Institute Image" class="img-fluid" data-aos="fade-right"
+                        data-aos-delay="300">
+                </div>
+
+                <div class="col-md-7">
+                    <p class="lead text-dark mb-4" data-aos="fade-up" data-aos-delay="400">
+                        Institute of Computer Science (ICS), Satara, was founded by Mr. Sagar Desai with the vision of
+                        building a successful career for students in the field of IT. Since our inception, we have been
+                        conducting classes in various computer-related fields.
+                    </p>
+                    <p class="text-muted mb-4" data-aos="fade-up" data-aos-delay="500">
+                        ICS stands out as an institute capable of grooming both average and brilliant students. Our
+                        dedicated, qualified, and experienced teaching staff leave no stone unturned to bring out the
+                        best in every student. Regular assignments are provided on each topic to enhance student
+                        confidence and assess their progress.
+                    </p>
+                    <p class="text-muted mb-4" data-aos="fade-up" data-aos-delay="600">
+                        Additionally, we have guest faculty from esteemed educational institutions and the IT field. Our
+                        staff members have assisted numerous students in achieving success in their careers. Known for
+                        their personalized approach, our teachers provide individual focus to each and every student.
+                    </p>
+                    <p class="text-muted mb-4" data-aos="fade-up" data-aos-delay="700">
+                        The Institute has become a well-established name in the coaching arena for various computer
+                        languages. We offer all the requisite facilities needed for high-standard education.
+                        Comprehensive study material, thoroughly prepared by our qualified teachers and aligned with
+                        current exam patterns, is provided to each student.
+                    </p>
+                    <a href="course.html" class="btn btn-primary btn-lg mt-3"
+                        style="background-color: var(--highlight-color); border-color: var(--highlight-color);"
+                        data-aos="fade-up" data-aos-delay="800">Explore Our Courses</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Staff Section -->
+    <section class="our-staff py-5" style="background-color: #f4f7fb;">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-4" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; position: relative; padding-left: 20px; 
+                    line-height: 1.4; display: inline-block;" data-aos="fade-up" data-aos-delay="200">
+                Meet Our Staff
+                <span
+                    style="position: absolute; left: 0; top: 0; height: 100%; width: 10px; background-color: var(--highlight-color); z-index: 1;"></span>
+            </h2>
+
+            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                <div class="col-lg-2 col-md-4 mb-4 col-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-lg border-0 rounded staff-card w-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="image/staff1.jpg" class="card-img-top" alt="Staff 1"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" style="color: var(--primary-color);">Mr. Sagar Desai</h5>
+                            <p class="card-text text-muted">DIRECTOR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 col-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-lg border-0 rounded staff-card w-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="image/staff2.jpg" class="card-img-top" alt="Staff 2"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" style="color: var(--primary-color);">Mr. Sujit Patil</h5>
+                            <p class="card-text text-muted">LECTURER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 col-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card shadow-lg border-0 rounded staff-card w-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="image/staff3.jpg" class="card-img-top" alt="Staff 3"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" style="color: var(--primary-color);">Mr. Ajinkya More</h5>
+                            <p class="card-text text-muted">LECTURER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 col-6 d-flex" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card shadow-lg border-0 rounded staff-card w-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="image/staff4.jpg" class="card-img-top" alt="Staff 4"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" style="color: var(--primary-color);">Mr. Kiran Kadam</h5>
+                            <p class="card-text text-muted">LECTURER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 col-6 d-flex" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card shadow-lg border-0 rounded staff-card w-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="image/staff5.jpg" class="card-img-top" alt="Staff 5"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" style="color: var(--primary-color);">Ms. Priyanka Kirdat</h5>
+                            <p class="card-text text-muted">LECTURER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 col-6 d-flex" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card shadow-lg border-0 rounded staff-card w-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="image/staff6.jpg" class="card-img-top" alt="Staff 6"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" style="color: var(--primary-color);">Ms. Pooja Bhosale</h5>
+                            <p class="card-text text-muted">LECTURER</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5" style="background-color: var(--footer-bg); color: var(--footer-text-color);">
+        <div class="container">
+            <div class="text-center text-md-left">
+                <p class="mb-0">
+                    &copy; 2025 Institute of Computer Science, Satara. All Rights Reserved.
+                </p>
+            </div>
+            <div class="mt-2 text-center text-md-right">
+                <a href="#" style="color: var(--link-hover-color); text-decoration: none; margin-right: 10px;">Privacy
+                    Policy</a>
+                <a href="#" style="color: var(--link-hover-color); text-decoration: none;">Terms of Service</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute of Computer Science - Satara</title>
+    <link rel="icon" href="image/logo2.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #003399;
+            --secondary-color: #ffffff;
+            --accent-color: #66ccff;
+            --background-color: #f4f4f4;
+            --text-color-dark: #333;
+            --text-color-light: #FAF0CA;
+            --heading-color: #0D3B66;
+            --subheading-color: #555555;
+            --button-primary-bg: #66ccff;
+            --button-primary-hover-bg: #4fa3cc;
+            --button-outline-bg: transparent;
+            --button-outline-border: #003399;
+            --button-outline-hover-bg: #003399;
+            --button-outline-hover-color: #ffffff;
+            --border-color: #d1d1d1;
+            --border-hover-color: #66ccff;
+            --bg-light: #ffffff;
+            --bg-dark: #0D3B66;
+            --bg-hover: #f0f0f0;
+            --bg-gradient-start: rgba(0, 51, 153, 0.8);
+            --bg-gradient-end: rgba(0, 0, 0, 0.6);
+            --section-bg: #ffffff;
+            --section-hover-bg: #f9f9f9;
+            --alert-success-bg: #28a745;
+            --alert-error-bg: #dc3545;
+            --alert-warning-bg: #ffc107;
+            --alert-info-bg: #17a2b8;
+            --link-color: #003399;
+            --link-hover-color: #66ccff;
+            --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --box-shadow-dark: 0 10px 15px rgba(0, 0, 0, 0.2);
+            --hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --navbar-bg: #ffffff;
+            --navbar-text-color: #003399;
+            --footer-bg: #0D3B66;
+            --footer-text-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --card-border: #d1d1d1;
+            --card-hover-bg: #f9f9f9;
+            --card-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            --icon-color: #FF5733;
+            --gradient-primary: linear-gradient(to right, #003399, #66ccff);
+            --gradient-accent: linear-gradient(to right, #66ccff, #f4f4f4);
+            --highlight-color: #f95738;
+            --danger-color: #f44336;
+            --success-color: #4CAF50;
+            --warning-color: #ff9800;
+            --info-color: #2196F3;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #fff;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--info-color);
+        }
+
+        .nav-link.btn:hover {
+            background-color: var(--highlight-color) !important;
+        }
+
+        .achievements {
+            margin-top: 86px;
+        }
+
+        .student-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 25px;
+            transition: all 0.3s ease-in-out;
+            font-family: 'Inter', sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .student-card:hover {
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(200, 220, 240, 0.4), rgba(220, 240, 255, 0.3));
+        }
+
+        .student-image img {
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .student-card:hover .student-image img {
+            transform: scale(1.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h4.text-dark {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .student-card:hover h4 {
+            color: var(--primary-color);
+        }
+
+        .achievement,
+        .skills {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 12px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .achievement strong,
+        .skills strong {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        button.btn-primary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button.btn-primary:hover {
+            background-color: var(--highlight-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .student-card {
+                padding: 20px;
+            }
+
+            h4.text-dark {
+                font-size: 1.2rem;
+            }
+
+            .achievement,
+            .skills {
+                font-size: 0.9rem;
+            }
+
+            button.btn-primary {
+                font-size: 1rem;
+            }
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .about-us-heading {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .heading-underline {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background-color: var(--highlight-color);
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="ICS Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white"
+                            style="background-color: var(--primary-color); color: white; border: none; border-radius: 30px; padding: 8px 16px; font-weight: bold;"
+                            data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person-circle" style="font-size: 18px;"></i>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header"
+                    style="background-color: #0D3B66; color: #FFF; border-bottom: 2px solid #F4D35E;">
+                    <h5 class="modal-title" id="registerModalLabel"
+                        style="font-family: 'Arial', sans-serif; font-size: 1.25rem; color: #FFF;">
+                        <i class="bi bi-pencil-square" style="font-size: 1.5rem; color: #FFF;"></i> Login
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="color: #FFF;"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                Email ID<span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                Password<span class="text-danger">*</span>
+                            </label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"
+                            style="background-color: var(--success-color); color: #FFF">
+                            <i class="bi bi-check-circle"></i> Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievements Section -->
+    <section class="achievements py-5" style="background-color: #f4f7fb;">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-4" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; 
+                    position: relative; padding-left: 20px; line-height: 1.4; display: inline-block;"
+                data-aos="fade-up" data-aos-delay="200">
+                Our Successful Students
+                <span
+                    style="position: absolute; left: 0; top: 0; height: 100%; width: 10px; background-color: var(--highlight-color); z-index: 1;"></span>
+            </h2>
+
+            <div class="row" id="students-list"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5" style="background-color: var(--footer-bg); color: var(--footer-text-color);">
+        <div class="container">
+            <div class="text-center text-md-left">
+                <p class="mb-0">
+                    &copy; 2025 Institute of Computer Science, Satara. All Rights Reserved.
+                </p>
+            </div>
+            <div class="mt-2 text-center text-md-right">
+                <a href="#" style="color: var(--link-hover-color); text-decoration: none; margin-right: 10px;">Privacy
+                    Policy</a>
+                <a href="#" style="color: var(--link-hover-color); text-decoration: none;">Terms of Service</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        const students = [
+            {
+                name: "Aditya Shinde",
+                location: "Private, USA",
+                skills: "CRM",
+                image: "image/s1.jpg"
+            },
+            {
+                name: "Jai Inamdar",
+                location: "EMedia, USA",
+                skills: "Java Developer",
+                image: "image/s2.jpg"
+            },
+            {
+                name: "Anil Ingale",
+                location: "TCS, Pune",
+                skills: "Sap Consultant",
+                image: "image/s3.jpg"
+            },
+            {
+                name: "Sachin Wagh",
+                location: "Symantec, Pune",
+                skills: "Security Analyst",
+                image: "image/s4.jpg"
+            },
+            {
+                name: "Dhiraj Sutar",
+                location: "Persistent, Pune",
+                skills: "Software Engineer",
+                image: "image/s5.jpg"
+            },
+            {
+                name: "Vikramsinh Barbade",
+                location: "Capgemini, Pune",
+                skills: "Consultant",
+                image: "image/s6.jpg"
+            },
+            {
+                name: "Rohan Mane",
+                location: "Capgemini, Pune",
+                skills: "Software Tester",
+                image: "image/s7.jpg"
+            },
+            {
+                name: "Pranita Kadam",
+                location: "Capgemini, Pune",
+                skills: "Consultant",
+                image: "image/s8.jpg"
+            },
+            {
+                name: "Amol Gore",
+                location: "infosys, Pune",
+                skills: "Systems Engineer",
+                image: "image/s9.jpg"
+            },
+            {
+                name: "Rohit Sawant",
+                location: "Amdocs, Pune",
+                skills: "PLSQl Developer",
+                image: "image/s10.jpg"
+            },
+            {
+                name: "Ranjeet Chavan",
+                location: "Amdocs, Pune",
+                skills: "Software Developer",
+                image: "image/s11.jpg"
+            },
+            {
+                name: "Vaishnavi Kadam",
+                location: "Amdocs, Pune",
+                skills: "Process Analyst",
+                image: "image/s12.jpg"
+            },
+            {
+                name: "Bhola Parit",
+                location: "L&T, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s13.jpg"
+            },
+            {
+                name: "Vishal Ghorpade",
+                location: "IBM, Pune",
+                skills: "System Admin",
+                image: "image/s14.jpg"
+            },
+            {
+                name: "Vishal Pawar",
+                location: "IBM, Mumbai",
+                skills: "Database Administrator",
+                image: "image/s15.jpg"
+            },
+            {
+                name: "Ramchandra Lavate",
+                location: "IBM, Mumbai",
+                skills: "Software Developer",
+                image: "image/s16.jpg"
+            },
+            {
+                name: "Sujay Karve",
+                location: "Cybage, Pune",
+                skills: "Software Engineer",
+                image: "image/s17.jpg"
+            },
+            {
+                name: "Shravan Bodhe",
+                location: "Cybage, Pune",
+                skills: "Software Engineer",
+                image: "image/s18.jpg"
+            },
+            {
+                name: "Vishal Ransing",
+                location: "Hexaware, Mumbai",
+                skills: "Software Developer",
+                image: "image/s19.jpg"
+            },
+            {
+                name: "Urmik Joshi",
+                location: "Hexaware, Pune",
+                skills: "Software Engineer",
+                image: "image/s20.jpg"
+            },
+            {
+                name: "Abhijt Kumbharr",
+                location: "Siemens, Pune",
+                skills: "Project Engineer",
+                image: "image/s21.jpg"
+            },
+            {
+                name: "Komal Madakai",
+                location: "Siemens, Pune",
+                skills: "Software Developer",
+                image: "image/s22.jpg"
+            },
+            {
+                name: "Manish Mahindre",
+                location: "Precision, Pune",
+                skills: "Team Leader",
+                image: "image/s23.jpg"
+            },
+            {
+                name: "Rushikesh Nimbalkar",
+                location: "EXL, Pune",
+                skills: "Quality Assurance",
+                image: "image/s24.jpg"
+            },
+            {
+                name: "Prajakta Shinde",
+                location: "Firstcry, Pune",
+                skills: "Software Tester",
+                image: "image/s25.jpg"
+            },
+            {
+                name: "Sonal Salunkhe",
+                location: "Digital",
+                skills: "Director",
+                image: "image/s26.jpg"
+            },
+            {
+                name: "Vishal Kolekar",
+                location: "Clover, Mumbai",
+                skills: "Technical Associate",
+                image: "image/s27.jpg"
+            },
+            {
+                name: "Sandeep Bhatkande",
+                location: "Digite infotech, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s28.jpg"
+            },
+            {
+                name: "Samadhan Kadam",
+                location: "Enzigma, Pune",
+                skills: "Software Engineer",
+                image: "image/s29.jpg"
+            },
+            {
+                name: "Mohsin Shaikh",
+                location: "Deutsche Bank, Pune",
+                skills: "Unix Support",
+                image: "image/s30.jpg"
+            },
+            {
+                name: "Sudarshan Korade",
+                location: "Cyber Crime, Mumbai",
+                skills: "Police Constable",
+                image: "image/s31.jpg"
+            },
+            {
+                name: "Ranjit Bhojane",
+                location: "Capita India, Pune",
+                skills: "Administrator",
+                image: "image/s32.jpg"
+            },
+            {
+                name: "Ketan Dhane",
+                location: "Amdocs, Pune",
+                skills: "System Analyst",
+                image: "image/s33.jpg"
+            },
+            {
+                name: "Vishal Vasantrao Patil",
+                location: "Reliance, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s34.jpg"
+            },
+            {
+                name: "Laukik Gade",
+                location: "Symantec, Pune",
+                skills: "Intern",
+                image: "image/s35.jpg"
+            },
+            {
+                name: "Nikhil Waghmale",
+                location: "Tata Communication, Pune",
+                skills: "Network Engineer",
+                image: "image/s36.jpg"
+            },
+            {
+                name: "Suyog Menkar",
+                location: "Aurus tech, Pune",
+                skills: "System Analyst",
+                image: "image/s37.jpg"
+            },
+            {
+                name: "Tejashwi Shinde",
+                location: "ISAS, Pune",
+                skills: "PHP Developer",
+                image: "image/s38.jpg"
+            },
+            {
+                name: "Jitendra Phadatare",
+                location: "HolidayMe, Pune",
+                skills: "Software Engineer",
+                image: "image/s39.jpg"
+            },
+            {
+                name: "Snehal Sawant",
+                location: "Tieto, Pune",
+                skills: "Test Automation Engineer",
+                image: "image/s40.jpg"
+            },
+            {
+                name: "Digambar Chavan",
+                location: "Veritas, Pune",
+                skills: "Software Engineer",
+                image: "image/s41.jpg"
+            },
+            {
+                name: "Girish Bodhe-Inamdar",
+                location: "PrideVel, Mumbai",
+                skills: "iOS Developer",
+                image: "image/s42.jpg"
+            },
+            {
+                name: "Yogesh Katkar",
+                location: "Eracal, Pune",
+                skills: "Java Developer",
+                image: "image/s43.jpg"
+            },
+            {
+                name: "Shree Dhane",
+                location: "Bitwise, Pune",
+                skills: "Programmer Analyst",
+                image: "image/s44.jpg"
+            },
+            {
+                name: "Vishal Shelar",
+                location: "DCC bank, Satara",
+                skills: "Support Executive",
+                image: "image/s45.jpg"
+            },
+            {
+                name: "Fahim Kazi",
+                location: "EffCode, Pune",
+                skills: "Software Engineer",
+                image: "image/s46.jpg"
+            },
+            {
+                name: "Ajay Choudhary",
+                location: "Codaemon, Pune",
+                skills: "Software Developer",
+                image: "image/s47.jpg"
+            },
+            {
+                name: "Priyesh Rajemane",
+                location: "BDO, Pune",
+                skills: "Assistant HR",
+                image: "image/s48.jpg"
+            },
+            {
+                name: "Mohsin Naikawadi",
+                location: "NSE Infotech, Mumbai",
+                skills: "System Analyst",
+                image: "image/s49.jpg"
+            },
+            {
+                name: "Pratiksha Varne",
+                location: "BMC ,Pune",
+                skills: "Developer",
+                image: "image/s50.jpg"
+            },
+            {
+                name: "Rohit Kulkarni",
+                location: "Code, Pune",
+                skills: "Android Developer",
+                image: "image/s51.jpg"
+            },
+            {
+                name: "Abhijeet Kothavale",
+                location: "Epicomm, Pune",
+                skills: "iOS Developer",
+                image: "image/s52.jpg"
+            },
+            {
+                name: "Tejaswini Gharge",
+                location: "Left Right Mind, Pune",
+                skills: "Software Developer",
+                image: "image/s53.jpg"
+            },
+            {
+                name: "Suraj Lawand",
+                location: "Johnson Inc, Pune",
+                skills: "Software Engineer",
+                image: "image/s54.jpg"
+            },
+            {
+                name: "Tabrosh Shaikh",
+                location: "Brandzgarage, Pune",
+                skills: "Software Developer",
+                image: "image/s55.jpg"
+            },
+            {
+                name: "Vishal Patil",
+                location: "Hurix Systems, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s56.jpg"
+            },
+            {
+                name: "Nikhil Misal",
+                location: "Upside Learning, Pune",
+                skills: "Business Analyst",
+                image: "image/s57.jpg"
+            },
+            {
+                name: "Sudip Godase",
+                location: "Tieto, Pune",
+                skills: "Software Developer",
+                image: "image/s58.jpg"
+            },
+            {
+                name: "Sanket Karanjule",
+                location: "Gluck International, Pune",
+                skills: "Software Engineer",
+                image: "image/s59.jpg"
+            },
+            {
+                name: "Mahesh Dhas",
+                location: "Hyundai, Beed",
+                skills: "EDP Manager",
+                image: "image/s60.jpg"
+            },
+            {
+                name: "Bharat Patil",
+                location: "Deloitte, Mumbai",
+                skills: "Software Developer",
+                image: "image/s61.jpg"
+            },
+            {
+                name: "Sachin Pisal",
+                location: "Reliance, Pune",
+                skills: "Assistant Manager",
+                image: "image/s62.jpg"
+            },
+            {
+                name: "Pranav Koli",
+                location: "Next Education, Pune",
+                skills: "Network Admin",
+                image: "image/s63.jpg"
+            },
+            {
+                name: "Sumit Magdum",
+                location: "NIHILENT Ltd., Pune",
+                skills: "System Engineer",
+                image: "image/s64.jpg"
+            },
+            {
+                name: "Jivan Satpute",
+                location: "Intellect, Hyderabad",
+                skills: "Project Engineer",
+                image: "image/s65.jpg"
+            },
+            {
+                name: "Maharudra Phalke",
+                location: "Onmobile Globa, Bangalore",
+                skills: "System Admin",
+                image: "image/s66.jpg"
+            },
+            {
+                name: "Abhijeet Pawar",
+                location: "ACME, Satara",
+                skills: "Support Executive",
+                image: "image/s67.jpg"
+            },
+            {
+                name: "Tukaram Ghadage",
+                location: "Maharashtra Police, Mumbai",
+                skills: "PSI",
+                image: "image/s68.jpg"
+            },
+            {
+                name: "Suyash Jadhav",
+                location: "Aurus Tech, Pune",
+                skills: "System Analyst.",
+                image: "image/s69.jpg"
+            },
+            {
+                name: "Sanket Doshi",
+                location: "Forbes Tech, Thane",
+                skills: "Software Developer",
+                image: "image/s70.jpg"
+            },
+            {
+                name: "Vishal Mhaske",
+                location: "Alpha-Beta, Pune",
+                skills: "Web Developer",
+                image: "image/s71.jpg"
+            },
+            {
+                name: "Vaibhav Gaikwad",
+                location: "Aloha Tech, Pune",
+                skills: "Quality Analyst",
+                image: "image/s72.jpg"
+            },
+            {
+                name: "Mohan Pawar",
+                location: "Mastek, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s73.jpg"
+            },
+            {
+                name: "Swapnil Thorat",
+                location: "Smartconnect, Mumbai",
+                skills: "Support Engineer",
+                image: "image/s74.jpg"
+            },
+            {
+                name: "Amol Kamble",
+                location: "GST Department, Pune",
+                skills: "Tax Assistant",
+                image: "image/s75.jpg"
+            },
+            {
+                name: "Puja Khamkar",
+                location: "Vns Finance, Pune",
+                skills: "Software Developer",
+                image: "image/s76.jpg"
+            },
+            {
+                name: "Abhijit Pathak",
+                location: "Skillnet, Pune",
+                skills: "System Analyst",
+                image: "image/s77.jpg"
+            },
+            {
+                name: "Vishal Deshmukh",
+                location: "Paramatrix, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s78.jpg"
+            },
+            {
+                name: "Vinay Adsul",
+                location: "Softcell, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s79.jpg"
+            },
+            {
+                name: "Sagar Valekar",
+                location: "Credentek, Mumbai",
+                skills: "Trainee Engineer",
+                image: "image/s80.jpg"
+            },
+            {
+                name: "Ashwini Shedge",
+                location: "BGM Policy, Pune",
+                skills: "Graphic designer",
+                image: "image/s81.jpg"
+            },
+            {
+                name: "Kuldip Sawant",
+                location: "Forgeahead, Pune",
+                skills: "Software Engineer",
+                image: "image/s82.jpg"
+            },
+            {
+                name: "Prashant Gilbile",
+                location: "J.S.Bank, Ajra, Kolhapur",
+                skills: "IT OFFICER",
+                image: "image/s83.jpg"
+            },
+            {
+                name: "Anant Doshi",
+                location: "MD India, Pune",
+                skills: ".Net Developer",
+                image: "image/s84.jpg"
+            },
+            {
+                name: "Aparna Ghadge",
+                location: "HR , Pune",
+                skills: "Management",
+                image: "image/s85.jpg"
+            },
+            {
+                name: "Sidharth Shaha",
+                location: "Pharma, Hyderabad",
+                skills: "Team Leader",
+                image: "image/s86.jpg"
+            },
+            {
+                name: "Amol Lawate",
+                location: "Insolutions, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s87.jpg"
+            },
+            {
+                name: "Sumit Shinde",
+                location: "Codwheo., Thane",
+                skills: "Database Administrator",
+                image: "image/s88.jpg"
+            },
+            {
+                name: "Ketan Torase",
+                location: "Wells Fargo, Banglore",
+                skills: "Senior Programmer",
+                image: "image/s89.jpg"
+            },
+            {
+                name: "Rohit Raskar",
+                location: "Synergy, Pune",
+                skills: "Process Engineer",
+                image: "image/s90.jpg"
+            },
+            {
+                name: "Dhiraj Chavan",
+                location: "ZiMetrics, Pune",
+                skills: "Software Engineer",
+                image: "image/s91.jpg"
+            },
+            {
+                name: "Pratik Gadankush",
+                location: "Godrej Logistics, Mumbai",
+                skills: "Assistant Manager",
+                image: "image/s92.jpg"
+            },
+            {
+                name: "Anis Madarkhan",
+                location: "WinSoft, Pune",
+                skills: "Software Developer",
+                image: "image/s93.jpg"
+            },
+            {
+                name: "Abhijeet Tarade",
+                location: "Eclerx, Pune",
+                skills: "Senior Analyst",
+                image: "image/s94.jpg"
+            },
+            {
+                name: "Abhi Indalkar",
+                location: "Hoonar Tekwurks, Pune",
+                skills: "Lead Consultant",
+                image: "image/s95.jpg"
+            },
+            {
+                name: "Sudhir Sapkal",
+                location: "Tekdi Techno, Pune",
+                skills: "Software Developer",
+                image: "image/s96.jpg"
+            },
+            {
+                name: "Deepali Uttekar",
+                location: "Wipro, Mumbai",
+                skills: "Finance Executive",
+                image: "image/s97.jpeg"
+            },
+            {
+                name: "Akshay Kshirsagar",
+                location: "Compucom India, Pune",
+                skills: "Network Engineer",
+                image: "image/s98.jpg"
+            },
+            {
+                name: "Sidhant Hande",
+                location: "Aurus, Pune",
+                skills: "System Analyst",
+                image: "image/s99.jpg"
+            },
+            {
+                name: "Avdhoot Mane",
+                location: "XTaas, Pune",
+                skills: "DBA",
+                image: "image/s100.jpg"
+            },
+            {
+                name: "Amit Tarade",
+                location: "Amdocs, Pune",
+                skills: "Software Engineer",
+                image: "image/s101.jpg"
+            },
+            {
+                name: "Irshad Shaikh",
+                location: "Wipro, Pune",
+                skills: "Netwrok Engineer",
+                image: "image/s102.jpg"
+            },
+            {
+                name: "Mahesh Ghanwat",
+                location: "Gupshup, Mumbai",
+                skills: "Software Engineer",
+                image: "image/s103.jpg"
+            },
+            {
+                name: "Swapnil More",
+                location: "Quick Heal, Pune",
+                skills: "Software Engineer",
+                image: "image/s104.jpg"
+            }
+        ];
+
+        function renderStudents() {
+            const studentsList = document.getElementById('students-list');
+            studentsList.innerHTML = '';
+
+            students.forEach(student => {
+                const studentItem = document.createElement('div');
+                studentItem.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'col-6', 'mb-4');
+
+                studentItem.innerHTML = `
+                <div class="student-card p-4 border rounded shadow-lg position-relative overflow-hidden d-flex flex-column" style="height: 100%;" data-aos="fade-up" data-aos-duration="800">
+                    <div class="student-image d-flex justify-content-center mb-4">
+                        <img src="${student.image}" alt="${student.name}" class="rounded-circle img-fluid" style="width: 120px; height: 120px; object-fit: contain;">
+                    </div>
+                    <h4 class="fw-bold text-dark mb-3" data-aos="fade-right" data-aos-duration="800">${student.name}</h4>
+                    <p class="achievement text-muted mb-2" data-aos="fade-left" data-aos-duration="800"><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> ${student.location}</p>
+                    <p class="skills text-muted mb-4" data-aos="fade-left" data-aos-duration="800"><strong><i class="fas fa-laptop-code"></i> Skills:</strong> ${student.skills}</p>
+                    <div class="mt-auto"> 
+                        <a href="#" class="btn btn-primary mt-auto w-100"
+                            style="background-color: #f4d35e; border: none; color: #0d3b66; font-weight: bold; padding: 10px 20px; text-transform: uppercase; transition: background-color 0.3s, transform 0.3s;">
+                            <i class="fas fa-user"></i> View Profile                        
+                        </a>
+                    </div>
+                </div>
+                `;
+
+                studentsList.appendChild(studentItem);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderStudents);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
